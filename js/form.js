@@ -19,6 +19,7 @@ class SupabaseClient {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
         'apikey': this.key,
         'Authorization': `Bearer ${this.key}`,
         'Prefer': 'return=representation'
@@ -27,8 +28,18 @@ class SupabaseClient {
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || 'Error al guardar los datos');
+      let payload;
+      try {
+        payload = await response.json();
+      } catch (_) {
+        payload = await response.text();
+      }
+
+      const details = payload && typeof payload === 'object'
+        ? [payload.message, payload.details, payload.hint, payload.code].filter(Boolean).join(' | ')
+        : String(payload);
+
+      throw new Error(`Supabase insert falló (${response.status} ${response.statusText}): ${details || 'Error al guardar los datos'}`);
     }
 
     return await response.json();
