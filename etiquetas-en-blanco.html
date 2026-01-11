@@ -62,6 +62,7 @@
       }
     </script>
     <link rel="stylesheet" href="css/site.css" />
+      <script src="js/form.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -73,7 +74,7 @@
           </a>
           <nav class="header-nav" aria-label="Categorías">
             <a href="index.html">Inicio</a>
-            <a href="etiquetas-en-blanco.html">Etiquetas en blanco</a>
+            <a href="etiquetas-en-blanco.html">Etiquetas blancas</a>
             <a href="etiquetas-personalizadas.html">Etiquetas personalizadas</a>
             <div class="nav-dropdown">
               <span class="nav-dropdown-trigger">Aplicaciones</span>
@@ -100,14 +101,20 @@
               <span></span>
             </button>
 
-            <a href="#cotizacion" class="btn btn-primary">Solicitar cotización</a>
+            <a href="#" class="btn open-cotizacion-modal btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
         </div>
       </header>
 
       <main role="main">
-        <section class="hero" id="inicio">
+        <section class="hero hero--corporate" id="inicio">
           <div class="container">
             <div class="hero-grid">
               <div>
@@ -141,18 +148,11 @@
             <div class="section-header">
               <h2>Tamaños estándar más populares</h2>
               <p>
-                Medidas listas en inventario para envío inmediato. También fabricamos tamaños personalizados 
-                desde 500 unidades sin costos de tooling
+                Medidas listas en inventario para envío inmediato.
               </p>
             </div>
-            <div class="grid-3">
+            <div class="grid-2">
               <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="6" y="8" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M10 12h12M10 16h12M10 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </div>
                 <h3>Etiquetas para envíos (4" × 6")</h3>
                 <p>
                   <strong>101.6mm × 152.4mm (4" × 6")</strong> - El tamaño más usado para paquetería. Compatible 
@@ -162,12 +162,6 @@
                 </p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="8" y="10" width="16" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M12 14h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </div>
                 <h3>Etiquetas multiuso (2" × 1")</h3>
                 <p>
                   <strong>50.8mm × 25.4mm (2" × 1")</strong> - Tamaño versátil para códigos de barras, precios, 
@@ -177,12 +171,6 @@
                 </p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M16 12v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </div>
                 <h3>Etiquetas circulares (2" Ø)</h3>
                 <p>
                   <strong>50.8mm diámetro (2" redonda)</strong> - Círculos perfectos para sellos de garantía, 
@@ -192,12 +180,6 @@
                 </p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="4" y="10" width="24" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M8 14h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </div>
                 <h3>Etiquetas para alimentos (3" × 2")</h3>
                 <p>
                   <strong>76.2mm × 50.8mm (3" × 2")</strong> - Tamaño ideal para productos alimenticios, 
@@ -207,12 +189,6 @@
                 </p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="10" y="6" width="12" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M14 10h4M14 14h4M14 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </div>
                 <h3>Etiquetas verticales (2" × 4")</h3>
                 <p>
                   <strong>50.8mm × 101.6mm (2" × 4")</strong> - Etiqueta vertical perfecta para botellas, 
@@ -222,12 +198,6 @@
                 </p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="6" y="6" width="20" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M10 10h12M10 14h12M10 18h12M10 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                  </svg>
-                </div>
                 <h3>Hojas carta full sheet (8.5" × 11")</h3>
                 <p>
                   <strong>215.9mm × 279.4mm (carta completa)</strong> - Hoja carta completa sin divisiones. 
@@ -236,15 +206,30 @@
                   menús, señalización temporal, carteles adhesivos, prototipos. Back-slit para fácil despegado.
                 </p>
               </div>
+
+              <div class="feature-card">
+                <h3>Medida personalizada</h3>
+                <p>
+                  <strong>La medida que necesites</strong> - Fabricamos a tu especificación: ancho/alto, forma, 
+                  esquinas redondeadas, perforaciones y orientación del rollo. Opciones de core 1" o 3" y 
+                  cantidad por rollo según tu aplicación. También disponible en hoja carta/A4.
+                </p>
+              </div>
             </div>
           </div>
           
           <div class="cta-section">
-            <a href="#cotizacion" class="btn btn--pill">Solicitar muestras gratis</a>
+            <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </section>
 
-        <section class="section bg-panel materials-elegant" id="materiales">
+        <section class="section materials-elegant" id="materiales">
           <div class="container">
             <div class="section-header">
               <h2>Materiales disponibles</h2>
@@ -290,7 +275,7 @@
           <div class="container">
             <div class="section-header">
               <h2>Cómo fabricamos tus etiquetas en blanco</h2>
-              <p>Proceso flexible para órdenes desde 500 hasta 1,000,000+ etiquetas</p>
+              <p>Proceso flexible para órdenes desde 5,000 hasta 1,000,000+ etiquetas</p>
             </div>
 
             <div class="grid grid-2">
@@ -299,8 +284,7 @@
                 <p>
                   Defines: tamaño (ancho × alto), material (papel térmico, mate, BOPP, etc), forma 
                   (rectangular, redonda, ovalada, troquelada), formato (rollo o hoja), adhesivo 
-                  (permanente, removible, extra fuerte), cantidad. Enviamos muestras físicas gratis 
-                  para validar antes de producción.
+                  (permanente, removible, extra fuerte), cantidad.
                 </p>
               </article>
 
@@ -378,14 +362,6 @@
               </div>
 
               <div class="feature-card">
-                <h3>Muestras gratuitas</h3>
-                <p>
-                  Enviamos muestras físicas gratis antes de tu orden. Prueba adhesión en tus envases, 
-                  compatibilidad con tu impresora, calidad de corte. Decide con confianza.
-                </p>
-              </div>
-
-              <div class="feature-card">
                 <h3>Asesoría técnica</h3>
                 <p>
                   Equipo experto te ayuda a elegir el material correcto para tu aplicación. Soporte para 
@@ -399,15 +375,154 @@
         <section class="section bg-panel" id="cotizacion">
           <div class="container">
             <div class="section-header center">
-              <h2>Solicitar cotización y muestras</h2>
+              <h2>Solicitar cotización</h2>
               <p>Contáctanos para recibir una propuesta personalizada</p>
             </div>
             <div class="cta-section">
-              <a href="https://wa.me/16196643537" class="btn btn--pill">Solicitar cotización por WhatsApp</a>
+              <a href="#" class="btn btn--pill open-cotizacion-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
             </div>
           </div>
         </section>
       </main>
+
+      
+      <!-- Modal de cotización -->
+      <div id="cotizacion-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Solicitar cotización</h2>
+            <p>Completa el formulario y te responderemos en menos de 24 horas</p>
+            <button class="modal-close" type="button" aria-label="Cerrar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div id="form-message" class="form-message"></div>
+            
+            <form id="cotizacion-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre_completo">
+                    Nombre completo <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="nombre_completo" 
+                    name="nombre_completo" 
+                    required 
+                    placeholder="Juan Pérez"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="correo">
+                    Correo electrónico <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="correo" 
+                    name="correo" 
+                    required 
+                    placeholder="juan@empresa.com"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefono">
+                    Teléfono <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono" 
+                    required 
+                    placeholder="+52 664 123 4567"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="empresa">Empresa</label>
+                  <input 
+                    type="text" 
+                    id="empresa" 
+                    name="empresa" 
+                    placeholder="Nombre de tu empresa"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tipo_material">Tipo de material</label>
+                  <select id="tipo_material" name="tipo_material">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Papel térmico directo">Papel térmico directo</option>
+                    <option value="Papel para transferencia térmica">Papel para transferencia térmica</option>
+                    <option value="Papel brillante">Papel brillante</option>
+                    <option value="Papel mate">Papel mate</option>
+                    <option value="Poliéster (PET)">Poliéster (PET)</option>
+                    <option value="Polipropileno (BOPP)">Polipropileno (BOPP)</option>
+                    <option value="Vinilo">Vinilo</option>
+                    <option value="Transparente">Transparente</option>
+                    <option value="Metálico">Metálico</option>
+                    <option value="No estoy seguro">No estoy seguro</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="cantidad_estimada">Cantidad estimada</label>
+                  <select id="cantidad_estimada" name="cantidad_estimada">
+                    <option value="">Selecciona una opción</option>
+                    <option value="5,000 - 10,000">5,000 - 10,000</option>
+                    <option value="10,000 - 25,000">10,000 - 25,000</option>
+                    <option value="25,000 - 50,000">25,000 - 50,000</option>
+                    <option value="50,000 - 100,000">50,000 - 100,000</option>
+                    <option value="100,000+">100,000+</option>
+                    <option value="No estoy seguro">No estoy seguro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="fecha_entrega">Fecha de entrega deseada</label>
+                <input 
+                  type="date" 
+                  id="fecha_entrega" 
+                  name="fecha_entrega"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="descripcion_proyecto">
+                  Descripción del proyecto
+                </label>
+                <textarea 
+                  id="descripcion_proyecto" 
+                  name="descripcion_proyecto" 
+                  placeholder="Cuéntanos sobre tu proyecto: medidas, aplicación, diseño personalizado, etc."
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--pill">
+                  Enviar Solicitud
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <footer class="footer" role="contentinfo">
         <div class="container">
@@ -448,7 +563,13 @@
               <ul>
                 <li><a href="mailto:info@bajalabel.com">info@bajalabel.com</a></li>
                 <li>Horario: L–V 9:00–18:00</li>
-                <li><a href="#cotizacion">Solicitar cotización</a></li>
+                <li><a href="#" class="open-cotizacion-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a></li>
               </ul>
             </div>
           </div>

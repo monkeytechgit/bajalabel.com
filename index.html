@@ -67,6 +67,7 @@
     <link rel="stylesheet" href="css/site.css" />
 
     <script src="js/site.js"></script>
+    <script src="js/form.js"></script>
   </head>
 
   <body>
@@ -78,7 +79,7 @@
           </a>
           <nav class="header-nav" aria-label="Categorías">
             <a href="index.html">Inicio</a>
-            <a href="etiquetas-en-blanco.html">Etiquetas en blanco</a>
+            <a href="etiquetas-en-blanco.html">Etiquetas blancas</a>
             <a href="etiquetas-personalizadas.html">Etiquetas personalizadas</a>
             <div class="nav-dropdown">
               <span class="nav-dropdown-trigger">Aplicaciones</span>
@@ -104,14 +105,20 @@
               <span></span>
               <span></span>
             </button>
-            <a class="btn btn--pill" href="#cotizacion">Solicitar cotización</a>
+            <a class="btn btn--pill open-cotizacion-modal" href="#">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
       </div>
     </header>
 
     <main id="inicio" role="main">
-      <section class="hero" aria-label="Introducción">
+      <section class="hero hero--corporate" aria-label="Introducción">
         <div class="container">
           <div class="hero-grid">
             <div>
@@ -122,7 +129,19 @@
                 </p>
 
               <div class="hero-actions">
-                <a class="btn" href="#cotizacion">Solicitar cotización</a>
+                <a class="btn open-cotizacion-modal" href="#">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m2 7 10 7 10-7"/>
+                  </svg>
+                  Solicitar cotización
+                </a>
+                <a class="btn" href="tel:+16196643537">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  Llamar ahora
+                </a>
                 <a class="btn btn--secondary" href="#productos">Ver productos</a>
               </div>
             </div>
@@ -192,7 +211,13 @@
           </div>
           
           <div class="cta-section">
-            <a href="#cotizacion" class="btn btn--pill">Solicitar cotización</a>
+            <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
       </section>
@@ -206,202 +231,241 @@
 
           <div class="hr"></div>
 
-          <div class="grid grid-3" role="list">
+          <div class="grid grid-3 applications-grid" role="list">
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-alimentos.jpg" alt="Alimentos y bebidas" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Alimentos y bebidas</h3>
-                <p>Resistentes a humedad, congelación y cambios de temperatura. Cumplimiento FDA.</p>
-                <a href="alimentos-bebidas.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Alimentos y bebidas</h3>
+                  <p>Resistentes a humedad, congelación y cambios de temperatura. Cumplimiento FDA.</p>
+                  <a href="alimentos-bebidas.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-cosmeticos.jpg" alt="Cosméticos" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Cosméticos y cuidado personal</h3>
-                <p>Acabados premium, resistentes a aceites, cremas y agua. Efecto soft-touch.</p>
-                <a href="cosmeticos.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Cosméticos y cuidado personal</h3>
+                  <p>Acabados premium, resistentes a aceites, cremas y agua. Efecto soft-touch.</p>
+                  <a href="cosmeticos.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-quimicos.jpg" alt="Químicos" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Químicos y limpieza</h3>
-                <p>Resistencia extrema a solventes, detergentes y químicos. Cumplimiento GHS.</p>
-                <a href="quimicos.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Químicos y limpieza</h3>
+                  <p>Resistencia extrema a solventes, detergentes y químicos. Cumplimiento GHS.</p>
+                  <a href="quimicos.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-industrial.jpg" alt="Industrial" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Productos industriales</h3>
-                <p>Placas de activos, códigos 2D y etiquetas técnicas. Durabilidad de 10+ años.</p>
-                <a href="industrial.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Productos industriales</h3>
+                  <p>Placas de activos, códigos 2D y etiquetas técnicas. Durabilidad de 10+ años.</p>
+                  <a href="industrial.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-empaques.jpg" alt="Empaques" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Empaques y envolturas</h3>
-                <p>Sellos de seguridad VOID, etiquetas de envío y cerrado de cajas.</p>
-                <a href="empaques.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Empaques y envolturas</h3>
+                  <p>Sellos de seguridad VOID, etiquetas de envío y cerrado de cajas.</p>
+                  <a href="empaques.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-farmaceutico.jpg" alt="Farmacéutico" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Farmacéutico y salud</h3>
-                <p>Grado médico, esterilización y serialización. Cumplimiento FDA y trazabilidad.</p>
-                <a href="farmaceutico.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Farmacéutico y salud</h3>
+                  <p>Grado médico, esterilización y serialización. Cumplimiento FDA y trazabilidad.</p>
+                  <a href="farmaceutico.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-logistica.jpg" alt="Logística" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Logística e inventarios</h3>
-                <p>Control de almacenes, RFID, WMS y códigos de barras para trazabilidad.</p>
-                <a href="logistica.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Logística e inventarios</h3>
+                  <p>Control de almacenes, RFID, WMS y códigos de barras para trazabilidad.</p>
+                  <a href="logistica.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-retail.jpg" alt="Retail" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Retail y punto de venta</h3>
-                <p>Etiquetas de precio, promociones, EAN-13 y sistemas anti-hurto.</p>
-                <a href="retail.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Retail y punto de venta</h3>
+                  <p>Etiquetas de precio, promociones, EAN-13 y sistemas anti-hurto.</p>
+                  <a href="retail.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-institucional.jpg" alt="Institucional" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Institucional y educativo</h3>
-                <p>Etiquetas nominales, biblioteca, control de activos y material escolar.</p>
-                <a href="institucional.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Institucional y educativo</h3>
+                  <p>Etiquetas nominales, biblioteca, control de activos y material escolar.</p>
+                  <a href="institucional.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
 
             <article role="listitem">
-              <div class="product-card">
+              <div class="product-card product-card--overlay">
                 <div class="product-card-image">
                   <img src="img/industry/aplicacion-automotriz.jpg" alt="Automotriz" width="300" height="225" />
                 </div>
-                <div class="kicker">Aplicación</div>
-                <h3>Automotriz</h3>
-                <p>Alta temperatura, resistencia a aceites y trazabilidad de autopartes.</p>
-                <a href="automotriz.html" class="btn" style="margin-top: var(--space-3);">Ver más</a>
+                <div class="product-card-overlay">
+                  <div class="kicker">Aplicación</div>
+                  <h3>Automotriz</h3>
+                  <p>Alta temperatura, resistencia a aceites y trazabilidad de autopartes.</p>
+                  <a href="automotriz.html" class="btn">Ver más</a>
+                </div>
               </div>
             </article>
           </div>
           
           <div class="cta-section">
-            <a href="#cotizacion" class="btn btn--pill">Solicitar cotización</a>
+            <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
       </section>
 
       <section id="materiales" class="section" aria-label="Materiales y acabados">
         <div class="container">
-          <div class="grid grid-2" style="align-items: start;">
-            <div>
-              <h2 class="section-title">Materiales y acabados</h2>
-              <p class="section-lead">
-                Seleccionamos materiales, adhesivos y acabados según superficie, ambiente, fricción y humedad de tu producto.
-              </p>
+          <div class="section-header center">
+            <h2 class="section-title">Materiales y acabados</h2>
+            <p class="section-lead">
+              Seleccionamos materiales, adhesivos y acabados según superficie, ambiente, fricción y humedad de tu producto.
+            </p>
+          </div>
 
-              <div class="grid grid-2" aria-label="Opciones frecuentes" style="margin-top: var(--space-7); gap: var(--space-4);">
-                <article class="product-card" style="text-align: center;">
-                  <div class="product-card-image" style="margin-bottom: var(--space-3);">
-                    <img src="img/material/material-papel.jpg" alt="Papel mate y brillante" />
-                  </div>
-                  <h4 style="margin-bottom: var(--space-2);">Papel mate / brillante</h4>
-                  <p style="font-size: 0.9rem; color: var(--color-text-secondary);">Buena presentación para retail y promociones</p>
-                </article>
-                <article class="product-card" style="text-align: center;">
-                  <div class="product-card-image" style="margin-bottom: var(--space-3);">
-                    <img src="img/material/material-pp.jpg" alt="Polipropileno" />
-                  </div>
-                  <h4 style="margin-bottom: var(--space-2);">Polipropileno (PP)</h4>
-                  <p style="font-size: 0.9rem; color: var(--color-text-secondary);">Resistente y versátil para humedad moderada</p>
-                </article>
-                <article class="product-card" style="text-align: center;">
-                  <div class="product-card-image" style="margin-bottom: var(--space-3);">
-                    <img src="img/material/material-pet.jpg" alt="Poliéster" />
-                  </div>
-                  <h4 style="margin-bottom: var(--space-2);">Poliéster (PET)</h4>
-                  <p style="font-size: 0.9rem; color: var(--color-text-secondary);">Alto desempeño para entornos exigentes</p>
-                </article>
-                <article class="product-card" style="text-align: center;">
-                  <div class="product-card-image" style="margin-bottom: var(--space-3);">
-                    <img src="img/material/material-vinil.jpg" alt="Vinil" />
-                  </div>
-                  <h4 style="margin-bottom: var(--space-2);">Vinil</h4>
-                  <p style="font-size: 0.9rem; color: var(--color-text-secondary);">Excelente para branding y aplicaciones con buena adherencia</p>
-                </article>
+          <div class="materials-zigzag">
+            <!-- Material 1: Imagen izquierda -->
+            <article class="material-row material-row--white">
+              <img src="img/material/material-papel.jpg" alt="Papel mate y brillante" class="material-image" />
+              <div class="material-content">
+                <h3>Papel mate / brillante</h3>
+                <p>Buena presentación para retail y promociones</p>
+                <div class="kicker">¿Dónde se usa?</div>
+                <ul class="material-uses">
+                  <li>Retail</li>
+                  <li>Promociones temporales</li>
+                  <li>Etiquetas de precio</li>
+                  <li>Productos de consumo con vida útil corta</li>
+                </ul>
               </div>
-            </div>
+            </article>
 
-            <div>
-              <div class="kicker">Recomendación rápida</div>
-              <div class="steps" aria-label="Guía de selección">
-                <div class="step">
-                  <div>
-                    <h3>¿Dónde se usa?</h3>
-                    <p>Refrigeración, exterior, fricción, humedad, químicos, etc.</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <div>
-                    <h3>¿Sobre qué superficie pega?</h3>
-                    <p>Vidrio, plástico, cartón, metal, superficies texturizadas.</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <div>
-                    <h3>¿Qué vida útil necesitas?</h3>
-                    <p>Temporal, mediana o larga duración con lectura estable.</p>
-                  </div>
-                </div>
+            <!-- Material 2: Imagen derecha -->
+            <article class="material-row material-row--reverse">
+              <img src="img/material/material-pp.jpg" alt="Polipropileno" class="material-image" />
+              <div class="material-content">
+                <h3>Polipropileno (PP)</h3>
+                <p>Resistente y versátil para humedad moderada</p>
+                <div class="kicker">¿Dónde se usa?</div>
+                <ul class="material-uses">
+                  <li>Cosméticos</li>
+                  <li>Productos de limpieza</li>
+                  <li>Envases plásticos</li>
+                  <li>Ambientes con humedad moderada</li>
+                </ul>
               </div>
-            </div>
+            </article>
+
+            <!-- Material 3: Imagen izquierda -->
+            <article class="material-row material-row--white">
+              <img src="img/material/material-pet.jpg" alt="Poliéster" class="material-image" />
+              <div class="material-content">
+                <h3>Poliéster (PET)</h3>
+                <p>Alto desempeño para entornos exigentes</p>
+                <div class="kicker">¿Dónde se usa?</div>
+                <ul class="material-uses">
+                  <li>Industrial y automotriz</li>
+                  <li>Químicos y alta temperatura</li>
+                  <li>Exterior con durabilidad 10+ años</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Material 4: Imagen derecha -->
+            <article class="material-row material-row--reverse">
+              <img src="img/material/material-vinil.jpg" alt="Vinil" class="material-image" />
+              <div class="material-content">
+                <h3>Vinil</h3>
+                <p>Excelente para branding y aplicaciones con buena adherencia</p>
+                <div class="kicker">¿Dónde se usa?</div>
+                <ul class="material-uses">
+                  <li>Stickers promocionales</li>
+                  <li>Calcomanías para vidrio y superficies lisas</li>
+                  <li>Branding permanente</li>
+                </ul>
+              </div>
+            </article>
           </div>
           
           <div class="cta-section">
-            <a href="#cotizacion" class="btn btn--pill">Solicitar cotización</a>
+            <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
       </section>
@@ -415,32 +479,36 @@
 
           <div class="hr"></div>
 
-          <div class="grid grid-2" role="list">
-            <article role="listitem">
-              <div class="product-card-image">
-                <img src="img/tech-digital.jpg" alt="Impresión digital" width="400" height="300" />
+          <div class="tech-zigzag">
+            <!-- Tecnología 1: Imagen izquierda -->
+            <article class="tech-row">
+              <img src="img/tech-digital.jpg" alt="Impresión digital" width="400" height="300" class="tech-image" />
+              <div class="tech-content">
+                <div class="kicker">Calidad y rapidez</div>
+                <h3>Impresión digital</h3>
+                <p>Excelente para cambios frecuentes, múltiples versiones y tirajes cortos con alta definición.</p>
               </div>
-              <div class="kicker">Calidad y rapidez</div>
-              <h3>Impresión digital</h3>
-              <p>
-                Excelente para cambios frecuentes, múltiples versiones y tirajes cortos con alta definición.
-              </p>
             </article>
 
-            <article role="listitem">
-              <div class="product-card-image">
-                <img src="img/tech-flexografia.jpg" alt="Flexografía" width="400" height="300" />
+            <!-- Tecnología 2: Imagen derecha -->
+            <article class="tech-row tech-row--reverse">
+              <img src="img/tech-flexografia.jpg" alt="Flexografía" width="400" height="300" class="tech-image" />
+              <div class="tech-content">
+                <div class="kicker">Eficiencia en volumen</div>
+                <h3>Flexografía</h3>
+                <p>Óptima para producción constante en rollo, control de tinta y consistencia a gran escala.</p>
               </div>
-              <div class="kicker">Eficiencia en volumen</div>
-              <h3>Flexografía</h3>
-              <p>
-                Óptima para producción constante en rollo, control de tinta y consistencia a gran escala.
-              </p>
             </article>
           </div>
           
           <div class="cta-section">
-            <a href="#cotizacion" class="btn btn--pill">Solicitar cotización</a>
+            <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
       </section>
@@ -498,11 +566,150 @@
             </div>
 
             <div class="cta-section">
-              <a href="https://wa.me/16196643537" class="btn btn--pill">Solicitar cotización por WhatsApp</a>
+              <a href="#" class="btn btn--pill open-cotizacion-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
+              <a href="https://wa.me/16196643537" class="btn btn--secondary btn--pill">WhatsApp</a>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Modal de cotización -->
+      <div id="cotizacion-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Solicitar cotización</h2>
+            <p>Completa el formulario y te responderemos en menos de 24 horas</p>
+            <button class="modal-close" type="button" aria-label="Cerrar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div id="form-message" class="form-message"></div>
+            
+            <form id="cotizacion-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre_completo">
+                    Nombre completo <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="nombre_completo" 
+                    name="nombre_completo" 
+                    required 
+                    placeholder="Juan Pérez"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="correo">
+                    Correo electrónico <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="correo" 
+                    name="correo" 
+                    required 
+                    placeholder="juan@empresa.com"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefono">
+                    Teléfono <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono" 
+                    required 
+                    placeholder="+52 664 123 4567"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="empresa">Empresa</label>
+                  <input 
+                    type="text" 
+                    id="empresa" 
+                    name="empresa" 
+                    placeholder="Nombre de tu empresa"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tipo_material">Tipo de material</label>
+                  <select id="tipo_material" name="tipo_material">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Papel térmico directo">Papel térmico directo</option>
+                    <option value="Papel para transferencia térmica">Papel para transferencia térmica</option>
+                    <option value="Papel brillante">Papel brillante</option>
+                    <option value="Papel mate">Papel mate</option>
+                    <option value="Poliéster (PET)">Poliéster (PET)</option>
+                    <option value="Polipropileno (BOPP)">Polipropileno (BOPP)</option>
+                    <option value="Vinilo">Vinilo</option>
+                    <option value="Transparente">Transparente</option>
+                    <option value="Metálico">Metálico</option>
+                    <option value="No estoy seguro">No estoy seguro</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="cantidad_estimada">Cantidad estimada</label>
+                  <select id="cantidad_estimada" name="cantidad_estimada">
+                    <option value="">Selecciona una opción</option>
+                    <option value="5,000 - 10,000">5,000 - 10,000</option>
+                    <option value="10,000 - 25,000">10,000 - 25,000</option>
+                    <option value="25,000 - 50,000">25,000 - 50,000</option>
+                    <option value="50,000 - 100,000">50,000 - 100,000</option>
+                    <option value="100,000+">100,000+</option>
+                    <option value="No estoy seguro">No estoy seguro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="fecha_entrega">Fecha de entrega deseada</label>
+                <input 
+                  type="date" 
+                  id="fecha_entrega" 
+                  name="fecha_entrega"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="descripcion_proyecto">
+                  Descripción del proyecto
+                </label>
+                <textarea 
+                  id="descripcion_proyecto" 
+                  name="descripcion_proyecto" 
+                  placeholder="Cuéntanos sobre tu proyecto: medidas, aplicación, diseño personalizado, etc."
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--pill">
+                  Enviar Solicitud
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <footer class="footer" role="contentinfo">
         <div class="container">
@@ -545,7 +752,13 @@
               <ul>
                 <li><a href="mailto:info@bajalabel.com">info@bajalabel.com</a></li>
                 <li>Horario: L–V 9:00–18:00</li>
-                <li><a href="#cotizacion">Solicitar cotización</a></li>
+                <li><a href="#" class="open-cotizacion-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a></li>
               </ul>
             </div>
           </div>

@@ -63,6 +63,7 @@
     </script>
     <link rel="stylesheet" href="css/site.css" />
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+      <script src="js/form.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -74,7 +75,7 @@
           </a>
           <nav class="header-nav" aria-label="Categorías">
             <a href="index.html">Inicio</a>
-            <a href="etiquetas-en-blanco.html">Etiquetas en blanco</a>
+            <a href="etiquetas-en-blanco.html">Etiquetas blancas</a>
             <a href="etiquetas-personalizadas.html">Etiquetas personalizadas</a>
             <div class="nav-dropdown">
               <span class="nav-dropdown-trigger">Aplicaciones</span>
@@ -101,7 +102,13 @@
               <span></span>
             </button>
 
-            <a href="#cotizacion" class="btn btn-primary">Solicitar cotización</a>
+            <a href="#" class="btn open-cotizacion-modal btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
           </div>
         </div>
         </nav>
@@ -222,7 +229,13 @@
         </section>
 
         <div class="cta-section">
-          <a href="#cotizacion" class="btn btn--pill">Solicitar cotización</a>
+          <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
         </div>
 
         <section class="section bg-panel materials-elegant" id="materiales">
@@ -303,7 +316,7 @@
               </div>
               <div class="product-card">
                 <div class="product-card-image">
-                  <span class="iconify" data-icon="noto:heart-with-bandage" data-width="120" data-height="120"></span>
+                  <img src="img/industry/aplicacion-farmaceutico.jpg" alt="Dispositivos médicos clase II y III" width="300" height="225" />
                 </div>
                 <div class="product-card-content">
                   <h3>Dispositivos médicos clase II y III</h3>
@@ -321,7 +334,7 @@
               </div>
               <div class="product-card">
                 <div class="product-card-image">
-                  <span class="iconify" data-icon="noto:vitamin" data-width="120" data-height="120"></span>
+                  <img src="img/industry/aplicacion-farmaceutico.jpg" alt="Suplementos alimenticios y vitamínicos" width="300" height="225" />
                 </div>
                 <div class="product-card-content">
                   <h3>Suplementos alimenticios y vitamínicos</h3>
@@ -339,7 +352,7 @@
               </div>
               <div class="product-card">
                 <div class="product-card-image">
-                  <span class="iconify" data-icon="noto:knife" data-width="120" data-height="120"></span>
+                  <img src="img/industry/aplicacion-farmaceutico.jpg" alt="Instrumental y equipo quirúrgico" width="300" height="225" />
                 </div>
                 <div class="product-card-content">
                   <h3>Instrumental y equipo quirúrgico</h3>
@@ -387,7 +400,13 @@
         </section>
 
         <div class="cta-section">
-          <a href="#cotizacion" class="btn btn--pill">Solicitar cotización</a>
+          <a href="#" class="btn open-cotizacion-modal btn--pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
         </div>
 
         <section class="section bg-panel" id="cotizacion">
@@ -397,11 +416,150 @@
               <p>Contáctanos para recibir una propuesta personalizada</p>
             </div>
             <div class="cta-section">
-              <a href="https://wa.me/16196643537" class="btn btn--pill">Solicitar cotización por WhatsApp</a>
+              <a href="#" class="btn btn--pill open-cotizacion-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a>
             </div>
           </div>
         </section>
       </main>
+
+      
+      <!-- Modal de cotización -->
+      <div id="cotizacion-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Solicitar cotización</h2>
+            <p>Completa el formulario y te responderemos en menos de 24 horas</p>
+            <button class="modal-close" type="button" aria-label="Cerrar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div id="form-message" class="form-message"></div>
+            
+            <form id="cotizacion-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre_completo">
+                    Nombre completo <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="nombre_completo" 
+                    name="nombre_completo" 
+                    required 
+                    placeholder="Juan Pérez"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="correo">
+                    Correo electrónico <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="correo" 
+                    name="correo" 
+                    required 
+                    placeholder="juan@empresa.com"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefono">
+                    Teléfono <span class="required">*</span>
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono" 
+                    required 
+                    placeholder="+52 664 123 4567"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="empresa">Empresa</label>
+                  <input 
+                    type="text" 
+                    id="empresa" 
+                    name="empresa" 
+                    placeholder="Nombre de tu empresa"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tipo_material">Tipo de material</label>
+                  <select id="tipo_material" name="tipo_material">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Papel térmico directo">Papel térmico directo</option>
+                    <option value="Papel para transferencia térmica">Papel para transferencia térmica</option>
+                    <option value="Papel brillante">Papel brillante</option>
+                    <option value="Papel mate">Papel mate</option>
+                    <option value="Poliéster (PET)">Poliéster (PET)</option>
+                    <option value="Polipropileno (BOPP)">Polipropileno (BOPP)</option>
+                    <option value="Vinilo">Vinilo</option>
+                    <option value="Transparente">Transparente</option>
+                    <option value="Metálico">Metálico</option>
+                    <option value="No estoy seguro">No estoy seguro</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="cantidad_estimada">Cantidad estimada</label>
+                  <select id="cantidad_estimada" name="cantidad_estimada">
+                    <option value="">Selecciona una opción</option>
+                    <option value="5,000 - 10,000">5,000 - 10,000</option>
+                    <option value="10,000 - 25,000">10,000 - 25,000</option>
+                    <option value="25,000 - 50,000">25,000 - 50,000</option>
+                    <option value="50,000 - 100,000">50,000 - 100,000</option>
+                    <option value="100,000+">100,000+</option>
+                    <option value="No estoy seguro">No estoy seguro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="fecha_entrega">Fecha de entrega deseada</label>
+                <input 
+                  type="date" 
+                  id="fecha_entrega" 
+                  name="fecha_entrega"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="descripcion_proyecto">
+                  Descripción del proyecto
+                </label>
+                <textarea 
+                  id="descripcion_proyecto" 
+                  name="descripcion_proyecto" 
+                  placeholder="Cuéntanos sobre tu proyecto: medidas, aplicación, diseño personalizado, etc."
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--pill">
+                  Enviar Solicitud
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <footer class="footer" role="contentinfo">
         <div class="container">
@@ -444,7 +602,13 @@
               <ul>
                 <li><a href="mailto:info@bajalabel.com">info@bajalabel.com</a></li>
                 <li>Horario: L–V 9:00–18:00</li>
-                <li><a href="#cotizacion">Solicitar cotización</a></li>
+                <li><a href="#" class="open-cotizacion-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
+              Solicitar cotización
+            </a></li>
               </ul>
             </div>
           </div>
