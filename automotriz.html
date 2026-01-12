@@ -646,7 +646,7 @@
           const trigger = dropdown.querySelector('.nav-dropdown-trigger');
           if (trigger) {
             trigger.addEventListener('click', function(e) {
-              if (window.innerWidth <= 768) {
+              if (window.innerWidth <= 1358) {
                 e.preventDefault();
                 dropdown.classList.toggle('active');
               }
@@ -658,7 +658,7 @@
         const navLinks = headerNav.querySelectorAll('a');
         navLinks.forEach(link => {
           link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1358) {
               mobileMenuToggle.classList.remove('active');
               headerNav.classList.remove('active');
               mobileMenuToggle.setAttribute('aria-expanded', 'false');
@@ -669,7 +669,7 @@
 
         // Close menu on window resize
         window.addEventListener('resize', () => {
-          if (window.innerWidth > 768) {
+          if (window.innerWidth > 1358) {
             mobileMenuToggle.classList.remove('active');
             headerNav.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
