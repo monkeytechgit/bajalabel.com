@@ -100,6 +100,18 @@
       setTimeout(() => revealIfInViewport(candidates), 0);
       setTimeout(() => scheduledRevealCheck(), 0);
     });
+
+    // Hard failsafe: if a browser fails to deliver IntersectionObserver callbacks
+    // (observed on some mobile WebViews / Safari variants), don't keep content hidden.
+    setTimeout(() => {
+      for (const el of candidates) {
+        if (!(el instanceof HTMLElement)) continue;
+        if (!el.classList.contains('reveal')) continue;
+        if (el.classList.contains('is-visible')) continue;
+        el.classList.add('is-visible');
+        observer.unobserve(el);
+      }
+    }, 1500);
   };
 
   if (document.readyState === 'loading') {
