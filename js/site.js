@@ -61,10 +61,24 @@
       }
     };
 
+    const createViewportScheduler = (callback) => {
+      let scheduled = false;
+      return () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => {
+          scheduled = false;
+          callback();
+        });
+      };
+    };
+
     for (const el of candidates) {
       el.classList.add('reveal');
       observer.observe(el);
     }
+
+    const scheduledRevealCheck = createViewportScheduler(() => revealIfInViewport(candidates));
 
     // Some browsers (notably Safari) may restore scroll position after DOMContentLoaded
     // without firing IntersectionObserver callbacks immediately. This ensures we don't
@@ -73,12 +87,18 @@
       requestAnimationFrame(() => revealIfInViewport(candidates));
     });
 
+    window.addEventListener('scroll', scheduledRevealCheck, { passive: true });
+    window.addEventListener('resize', scheduledRevealCheck);
+    window.addEventListener('orientationchange', scheduledRevealCheck);
+
     window.addEventListener('load', () => {
       setTimeout(() => revealIfInViewport(candidates), 0);
+      setTimeout(() => scheduledRevealCheck(), 0);
     });
 
     window.addEventListener('pageshow', () => {
       setTimeout(() => revealIfInViewport(candidates), 0);
+      setTimeout(() => scheduledRevealCheck(), 0);
     });
   };
 
